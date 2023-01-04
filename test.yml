@@ -2,13 +2,13 @@
 -  hosts: all
    become: yes
    tasks:
-     - name: install apache2 on nodes
+     - name: uninstall apache2 on nodes
        apt: 
          name: apache2
-         state: present
+         state: absent
 
-     - name: start apache 2
+     - name: stop apache 2
        service: 
            name: apache2
-           state: started
-           enabled: yes
+           state: stop
+           
